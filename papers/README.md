@@ -4,7 +4,9 @@ A paper track that runs alongside the modules. The goal isn't to know what a pap
 to understand the mechanism underneath well enough to explain it, critique it, and say
 what it would change in Casefile.
 
-**You write every TLDR. I check it.** Writing it yourself is how it sticks.
+**I write a one-page summary of each paper so you can get the gist fast (`summaries/`).
+You write your own TLDR after reading it (`notes/`), and I check it.** The summary helps
+you understand the paper; writing your TLDR is how it sticks.
 
 ## Two lanes
 
@@ -15,6 +17,10 @@ what it would change in Casefile.
 
 ## The loop for one paper
 
+0. **Summary.** Ask me `summary <paper>`. I write a one-pager in `summaries/` covering the
+   TLDR, setup, mechanism, results, limits, why it matters to you, and terms to know.
+   Read it first so you have a map of the paper. If the summary is enough for a Latest
+   paper, you can stop here.
 1. **Primer.** Ask me `primer <paper>`. I give you the prerequisites you need, the one
    equation or diagram that carries the paper, and 3 things to look for while reading.
 2. **Read in passes.**
