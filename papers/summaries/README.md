@@ -1,5 +1,8 @@
 # One-page summaries
 
+The PDFs are in `../pdfs/`, with the same file names as the summaries (for example,
+`2017-attention.md` goes with `2017-attention.pdf`). They aren't tracked by git.
+
 ## The 16 to read first, in order
 
 These are the papers I'd put first for your path: from how a transformer works, through
