@@ -66,11 +66,11 @@ passes 1–2. Each paper gets a short note in `notes/`. The full reading track (
 | 16 | Bandits | 5 | ☐ |
 | 17 | MDPs, value iteration, Q-learning | 5 | ☐ |
 | 18 | Deep Q-learning | 5 | ☐ |
-| 19 | Policy gradients (REINFORCE) | 5 | ☐ |
+| 19 | Policy gradients (REINFORCE) | 5 | 🟡 concepts via Casefile [RL primer](https://github.com/reddyallasudhakar/casefile/blob/main/docs/RL_PRIMER.md); CartPole exercise to do |
 | 20 | Actor-critic and PPO | 5 | ☐ |
 | 21 | Classic RLHF | 6 | ☐ |
-| 22 | RL with verifiable rewards: GRPO | 6 | ☐ |
-| 23 | Reward design and reward hacking | 6 | ☐ |
+| 22 | RL with verifiable rewards: GRPO | 6 | ✅ via [Casefile F5](https://github.com/reddyallasudhakar/casefile/blob/main/results/f5.md): GRPO on 1.5B extraction, field-match reward |
+| 23 | Reward design and reward hacking | 6 | 🟡 reward-hacking check done in F5 (none found); deliberate hack-and-fix to do |
 | 24 | RL for agents | 6 | ☐ |
 | 25 | Search and prompt optimisation | 7 | ☐ |
 | ★ | Capstone: one task, the full ladder | — | ☐ |
