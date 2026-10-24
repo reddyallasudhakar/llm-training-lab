@@ -20,7 +20,7 @@ the lessons (PyTorch on MPS), small experiments with MLX-LM, and all of classic 
 **Pace.** ~8–10 hours a week → about 13–14 weeks. Go faster where it's familiar.
 
 **The flagship project** you apply all of this to in public is in
-[PROJECT_PLAN.md](PROJECT_PLAN.md): ClaimCheck, a full post-training pipeline (SFT,
+[PROJECT_PLAN.md](PROJECT_PLAN.md): Casefile, a full post-training pipeline (SFT,
 distillation, DPO, GRPO) for auditing Indian health-insurance claim decisions. It is the
 spine project, and its week-by-week plan sets the pace for these modules.
 
@@ -48,16 +48,16 @@ passes 1–2. Each paper gets a short note in `notes/`. The full reading track (
 | # | Module | Level | Status |
 |---|--------|-------|--------|
 | 0 | Environment setup | 0 | ✅ |
-| 1 | How LLMs actually generate | 1 | ☐ |
-| 2 | Evals as experiments + the running task | 1 | ☐ |
+| 1 | How LLMs actually generate | 1 | 🟡 Part 1 taught; exercises 2–6 to do |
+| 2 | Evals as experiments + the running task | 1 | ✅ via [Casefile F2](https://github.com/reddyallasudhakar/casefile/blob/main/results/f2.md): frozen split, baselines, success bar, McNemar |
 | 3 | Embeddings and retrieval, properly | 1 | ☐ |
 | 4 | Prompt vs RAG vs fine-tune vs RL | 1 | ☐ |
 | 5 | PyTorch fundamentals | 2 | ☐ |
 | 6 | A transformer from scratch | 2 | ☐ |
 | 7 | Pretraining → SFT → RLHF: the model lifecycle | 2 | ☐ |
 | 8 | Fine-tune an encoder classifier | 3 | ☐ |
-| 9 | Building SFT data | 3 | ☐ |
-| 10 | LoRA SFT on a GCP GPU, run on your Mac | 3 | ☐ |
+| 9 | Building SFT data | 3 | ✅ via Casefile F2: 2,276 examples, loss on the answer only |
+| 10 | LoRA SFT on a GCP GPU, run on your Mac | 3 | ✅ via Casefile F2: LoRA at 0.5B/1.5B/3B on an L4 (laptop run still to do) |
 | 11 | QLoRA at 7–8B | 3 | ☐ |
 | 12 | Distillation and forgetting | 3 | ☐ |
 | 13 | Shipping a fine-tuned model | 3 | ☐ |

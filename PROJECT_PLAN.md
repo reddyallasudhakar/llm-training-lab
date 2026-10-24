@@ -1,6 +1,6 @@
-# Flagship project: ClaimCheck
+# Flagship project: Casefile
 
-*Working name, rename freely.* A small open model that audits Indian health-insurance claim
+A small open model that audits Indian health-insurance claim
 decisions: it reads the policy terms, the claim and the insurer's decision, then says whether
 each rejection or deduction is valid, which rule applies, what should actually have been
 paid, and the grounds for appeal.
@@ -109,7 +109,7 @@ Qwen2.5-1.5B  (BASE model: completes text, can't follow instructions yet)
    │  4. RL with verifiable rewards: GRPO on T3 against the rules engine
    │  5. Distil down: compress the final 1.5B into a 0.5B for laptops and phones
    ▼
-claimcheck-1.5b   claimcheck-0.5b
+casefile-1.5b   casefile-0.5b
 ```
 
 **Baseline to beat:** the same tasks fine-tuned on top of `Qwen2.5-1.5B-Instruct`. If your
@@ -164,7 +164,7 @@ real-world test set.**
 
 Set the baselines in week 3, then fix the targets. Don't change them later to fit the results.
 
-1. **Benchmark:** `claimcheck-bench` with T1–T3 splits, a real-world test set, a data card
+1. **Benchmark:** `CasefileBench` with T1–T3 splits, a real-world test set, a data card
    and a one-command eval. It's useful even if no model you train wins.
 2. **Fine-tuning:** a 1.5–3B model within a few points of a frontier model on T1/T2, at
    under 1/20th of the cost per 1,000 claims, running on your M3.
@@ -183,15 +183,15 @@ what fine-tuning cost on general ability (M12).
 
 ## 6. What goes public
 
-**Repos (both public on GitHub):**
+**Repos (both public, on my personal GitHub [reddyallasudhakar](https://github.com/reddyallasudhakar)):**
 
 1. **`llm-training-lab`**: the learning plan, module exercises and notes. Shows you learning
    in the open, week after week. (This is the current `ai-learning/` folder, moved out of the
    portfolio repo.)
-2. **`claimcheck`**: the flagship. People will judge it by the README and its structure:
+2. **`casefile`**: the flagship. People will judge it by the README and its structure:
 
 ```
-claimcheck/
+casefile/
   README.md        results table at the top, then a one-command reproduction
   rules/           adjudication engine + pytest suite (CI runs it on every push)
   policies/        one YAML file per insurer product, each with source links
@@ -202,8 +202,8 @@ claimcheck/
   docs/            data card, design notes, decision log (including what failed)
 ```
 
-**Hugging Face:** the dataset (`claimcheck-bench`), a model for each pipeline stage
-(`claimcheck-1.5b-sft`, `-distill`, `-grpo`, and the final `claimcheck-0.5b`) with model cards
+**Hugging Face:** the dataset (`CasefileBench`), a model for each pipeline stage
+(`casefile-1.5b-sft`, `-distill`, `-grpo`, and the final `casefile-0.5b`) with model cards
 that state their limits, and a Gradio demo on Spaces.
 
 **Portfolio site:** a project page plus four posts, one per milestone:
@@ -218,12 +218,12 @@ built from small commits; the rules engine has tests and CI; every number in
 
 ## 7. Execution plan (~19 weeks at 8–10 hours a week)
 
-Each phase pairs learning-plan modules (in the lab repo) with project work (in `claimcheck`).
+Each phase pairs learning-plan modules (in the lab repo) with project work (in `casefile`).
 
-| Weeks | Learn (lab) | Build (claimcheck) | Public output |
+| Weeks | Learn (lab) | Build (casefile) | Public output |
 |---|---|---|---|
 | **1** | Finish M1 | Create both repos; write the task spec and JSON schemas | Lab repo public |
-| **2–4** | M2, M3, M4 | **Rules engine v1** + tests (waiting periods, moratorium, room-rent proportionate deduction, co-pay, sub-limits, deductible); encode 5–10 products; scenario generator; collect and label ~150 real judgments; eval harness; frontier and small-model baselines | `claimcheck` v0, benchmark v0, **post 1** |
+| **2–4** | M2, M3, M4 | **Rules engine v1** + tests (waiting periods, moratorium, room-rent proportionate deduction, co-pay, sub-limits, deductible); encode 5–10 products; scenario generator; collect and label ~150 real judgments; eval harness; frontier and small-model baselines | `casefile` v0, benchmark v0, **post 1** |
 | **5–6** | M5, M6, M7 | Keep labelling the real-world test set; fix engine edge cases the baselines expose; compare base vs instruct models on your tasks | Lab: a GPT from scratch |
 | **7–10** | M8–M13 | T1 classifier; **post-training stages 0–1 from the base model** (optional continued pretraining, SFT with an instruction mix + T1–T3); LoRA → QLoRA at 7B on GCP; the instruct-model baseline; **D1** traces filtered by the engine; serve locally | SFT + D1 models on Hugging Face, **post 2** |
 | **11–13** | M14–M20 | T4 preference pairs + DPO (cut this first if you're behind) | Lab: PPO solving LunarLander |
@@ -268,7 +268,7 @@ test set.**
 
 ## 9. Decisions before week 1
 
-1. **Domain:** ClaimCheck (recommended) or a generic task (text-to-SQL, tool calling) that's
+1. **Domain:** Casefile (recommended) or a generic task (text-to-SQL, tool calling) that's
    easier to explain to anyone but less differentiated.
 2. **Repo names and GitHub account:** confirm both repos go public from day one.
 3. **Gaido IP:** confirm nothing you build reuses Gaido code, prompts or data. Domain

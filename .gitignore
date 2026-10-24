@@ -7,3 +7,5 @@ checkpoints/
 
 # Paper PDFs: re-download from arXiv, too large for git
 papers/pdfs/
+
+.DS_Store
